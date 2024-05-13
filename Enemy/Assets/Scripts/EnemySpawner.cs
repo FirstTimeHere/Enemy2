@@ -7,13 +7,11 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private List<Enemy> _enemys = new List<Enemy>();
-    [SerializeField] private List<Transform> _targets = new List<Transform>();
+    [SerializeField] private List<Target> _targets = new List<Target>();
 
 
     [SerializeField][Range(0.1f, 10f)] private float _delay;
     [SerializeField][Range(1, 100)] private int _numbersOfEnemy;
-
-    private int _backRotation = -180;
 
     private void Start()
     {
@@ -22,19 +20,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        int randomValue = GetRandom(_spawnPoints);
-        Enemy enemy = Instantiate(_enemys[randomValue], _spawnPoints[randomValue].position, _spawnPoints[randomValue].rotation);
+        int randomTransform = GetRandom(_spawnPoints.Length);
+        int randomEnemy = GetRandom(_enemys.Count);
+        int randomTarget = GetRandom(_targets.Count);
 
-        Vector3 direction;
+        Enemy enemy = Instantiate(_enemys[randomEnemy], _spawnPoints[randomTransform].position, _spawnPoints[randomTransform].rotation);
 
-        if (_spawnPoints[randomValue].localEulerAngles.y == _backRotation)
-        {
-            direction = Vector3.back;
-        }
-        else
-        {
-            direction = Vector3.forward;
-        }
+        Vector3 direction = _targets[randomTarget].transform.position;
 
         enemy.GetTransform(direction);
     }
@@ -51,9 +43,9 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private int GetRandom(Transform[] spawnPoints)
+    private int GetRandom(int maxValue)
     {
-        int randomValue = Random.Range(0, spawnPoints.Length);
+        int randomValue = Random.Range(0, maxValue);
         return randomValue;
     }
 }

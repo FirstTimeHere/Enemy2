@@ -17,6 +17,6 @@ public class EnemyMover : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(_enemy.Direction * Time.deltaTime * _speed);
+        transform.position = Vector3.MoveTowards(transform.position, _enemy.TargetPosition, _speed * Time.deltaTime);
     }
 }
