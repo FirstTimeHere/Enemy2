@@ -11,11 +11,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        GetVisionTarget();
+        GetVisionTarget(TargetPosition);
     }
 
-    protected virtual void GetVisionTarget()
+    protected virtual void GetVisionTarget(Vector3 targetPosition)
     {
-        this.transform.LookAt(TargetPosition);
+        this.transform.LookAt(targetPosition);
     }
 }

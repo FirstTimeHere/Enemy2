@@ -24,9 +24,9 @@ public class EnemySpawner : MonoBehaviour
         int randomEnemy = GetRandom(_enemys.Count);
         int randomTarget = GetRandom(_targets.Count);
 
-        Enemy enemy = Instantiate(_enemys[randomEnemy], _spawnPoints[randomTransform].position, _spawnPoints[randomTransform].rotation);
+        Enemy enemy = Instantiate(_enemys[3], _spawnPoints[randomTransform].position, _spawnPoints[randomTransform].rotation);
 
-        Vector3 direction = _targets[randomTarget].transform.position;
+        Vector3 direction = _targets[0].transform.position;
 
         enemy.GetTransform(direction);
     }

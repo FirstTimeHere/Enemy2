@@ -359,6 +359,7 @@
 "Assets/Scripts/Rabbit.cs"
 "Assets/Scripts/Snail.cs"
 "Assets/Scripts/Target.cs"
+"Assets/Scripts/TargetMover.cs"
 "Assets/Scripts/Zombie.cs"
 "Assets/_Barking_Dog/Common Scripts/MouseLook.cs"
 "Assets/_Barking_Dog/Common Scripts/Turn_Move.cs"

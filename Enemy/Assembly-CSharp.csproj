@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Zombie.cs" />
     <Compile Include="Assets\Scripts\Snail.cs" />
     <Compile Include="Assets\Scripts\Rabbit.cs" />
+    <Compile Include="Assets\Scripts\TargetMover.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_Barking_Dog\Readme_Please.txt" />
