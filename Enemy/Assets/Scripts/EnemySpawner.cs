@@ -6,12 +6,23 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private Transform[] _spawnTargetPoints;
     [SerializeField] private List<Enemy> _enemys = new List<Enemy>();
     [SerializeField] private List<Target> _targets = new List<Target>();
 
+    private List<Target> _targetCreated = new List<Target>();
 
     [SerializeField][Range(0.1f, 10f)] private float _delay;
     [SerializeField][Range(1, 100)] private int _numbersOfEnemy;
+
+    private void Awake()
+    {
+        for (int i = 0; i < _targets.Count; i++)
+        {
+            int randomIndexSpawnPoint = Random.Range(0, _spawnTargetPoints.Length);
+            _targetCreated.Add(Instantiate(_targets[i], _spawnTargetPoints[randomIndexSpawnPoint].position, _spawnTargetPoints[randomIndexSpawnPoint].rotation));
+        }
+    }
 
     private void Start()
     {
@@ -24,11 +35,13 @@ public class EnemySpawner : MonoBehaviour
         int randomEnemy = GetRandom(_enemys.Count);
         int randomTarget = GetRandom(_targets.Count);
 
-        Enemy enemy = Instantiate(_enemys[3], _spawnPoints[randomTransform].position, _spawnPoints[randomTransform].rotation);
+        Enemy enemy = Instantiate(_enemys[randomEnemy], _spawnPoints[randomTransform].position, _spawnPoints[randomTransform].rotation);
 
-        Vector3 direction = _targets[0].transform.position;
+        enemy.GetTarget(_targetCreated[randomTarget]);
 
-        enemy.GetTransform(direction);
+        //Vector3 direction = _targets[0].transform.position;
+
+        //enemy.GetTransform(direction);
     }
 
     private IEnumerator GetSpawnEnemy(float delay)

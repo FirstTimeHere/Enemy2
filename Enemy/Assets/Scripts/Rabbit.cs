@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Rabbit : Enemy
 {
     private Vector3 _scaleTouchTarget = new Vector3(0.1f, 0.1f, 0.1f);
-    private Vector3 _targetPositionChanged;
 
     private bool _isTouchTarget;
 
@@ -17,8 +13,7 @@ public class Rabbit : Enemy
 
     private void Update()
     {
-        //передать проверку где находится цель
-        GetVisionTarget(_targetPositionChanged);
+        GetVisionTarget(GetTargetPosition());
 
         if (_isTouchTarget)
         {
@@ -28,7 +23,7 @@ public class Rabbit : Enemy
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.position == TargetPosition)
+        if (other.transform.position == GetTargetPosition())
         {
             _isTouchTarget = true;
         }
