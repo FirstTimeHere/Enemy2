@@ -60,7 +60,6 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.26f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\_Barking_Dog\Common Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyMover.cs" />
@@ -69,7 +68,6 @@
     <Compile Include="Assets\Scripts\SecondTarget.cs" />
     <Compile Include="Assets\Scripts\Target.cs" />
     <Compile Include="Assets\Scripts\Zombie.cs" />
-    <Compile Include="Assets\Scripts\Snail.cs" />
     <Compile Include="Assets\Scripts\Rabbit.cs" />
     <Compile Include="Assets\Scripts\TargetMover.cs" />
   </ItemGroup>
