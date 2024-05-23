@@ -10,10 +10,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<Enemy> _enemys = new List<Enemy>();
     [SerializeField] private List<Target> _targets = new List<Target>();
 
-    private List<Target> _targetCreated = new List<Target>();
-
     [SerializeField][Range(0.1f, 10f)] private float _delay;
     [SerializeField][Range(1, 100)] private int _numbersOfEnemy;
+
+    private List<Target> _targetCreated = new List<Target>();
 
     private void Awake()
     {
@@ -38,10 +38,6 @@ public class EnemySpawner : MonoBehaviour
         Enemy enemy = Instantiate(_enemys[randomEnemy], _spawnPoints[randomTransform].position, _spawnPoints[randomTransform].rotation);
 
         enemy.GetTarget(_targetCreated[randomTarget]);
-
-        //Vector3 direction = _targets[0].transform.position;
-
-        //enemy.GetTransform(direction);
     }
 
     private IEnumerator GetSpawnEnemy(float delay)

@@ -357,6 +357,7 @@
 "Assets/Scripts/EnemyMover.cs"
 "Assets/Scripts/EnemySpawner.cs"
 "Assets/Scripts/Rabbit.cs"
+"Assets/Scripts/SecondTarget.cs"
 "Assets/Scripts/Snail.cs"
 "Assets/Scripts/Target.cs"
 "Assets/Scripts/TargetMover.cs"

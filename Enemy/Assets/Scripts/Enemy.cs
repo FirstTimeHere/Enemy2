@@ -2,28 +2,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private Target _target;
-    //public Vector3 TargetPosition { get; private set; }
-
-    //public void GetTransform(Vector3 transformDirection)
-    //{
-    //    TargetPosition = transformDirection;
-    //}
-
-    //private void Awake()
-    //{
-    //    _target = GetComponent<Target>();
-    //    GetTarget(_target);
-    //}
+    protected Target Target;
 
     private void Update()
     {
-        GetVisionTarget(_target.transform.position);
+        GetVisionTarget(Target.transform.position);
     }
 
     public void GetTarget(Target target)
     {
-        _target = target;
+        Target = target;
     }
 
     protected virtual void GetVisionTarget(Vector3 targetPosition)
@@ -33,6 +21,6 @@ public class Enemy : MonoBehaviour
 
     public virtual Vector3 GetTargetPosition()
     {
-        return _target.transform.position;
+        return Target.transform.position;
     }
 }

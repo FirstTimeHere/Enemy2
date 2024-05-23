@@ -4268,11 +4268,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8630666092342251459, guid: 91cf714ec1ac06046b8188a8e87b2b1f, type: 3}
       propertyPath: _enemys.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8630666092342251459, guid: 91cf714ec1ac06046b8188a8e87b2b1f, type: 3}
       propertyPath: _targets.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8630666092342251459, guid: 91cf714ec1ac06046b8188a8e87b2b1f, type: 3}
       propertyPath: _enemys.Array.data[0]
@@ -4281,15 +4281,15 @@ PrefabInstance:
     - target: {fileID: 8630666092342251459, guid: 91cf714ec1ac06046b8188a8e87b2b1f, type: 3}
       propertyPath: _enemys.Array.data[1]
       value: 
-      objectReference: {fileID: 8757715192083429077, guid: 71802c3d07edd0f499803ba92bc0f668, type: 3}
+      objectReference: {fileID: 4831717599494921478, guid: 826f32d9cf7da56439d90300117fc58b, type: 3}
     - target: {fileID: 8630666092342251459, guid: 91cf714ec1ac06046b8188a8e87b2b1f, type: 3}
       propertyPath: _enemys.Array.data[2]
       value: 
-      objectReference: {fileID: 4831717599494921478, guid: 826f32d9cf7da56439d90300117fc58b, type: 3}
+      objectReference: {fileID: 5527978499661030247, guid: c383afcffb74c7642b5fd8483a84ef79, type: 3}
     - target: {fileID: 8630666092342251459, guid: 91cf714ec1ac06046b8188a8e87b2b1f, type: 3}
       propertyPath: _enemys.Array.data[3]
       value: 
-      objectReference: {fileID: 5527978499661030247, guid: c383afcffb74c7642b5fd8483a84ef79, type: 3}
+      objectReference: {fileID: 8757715192083429077, guid: 71802c3d07edd0f499803ba92bc0f668, type: 3}
     - target: {fileID: 8630666092342251459, guid: 91cf714ec1ac06046b8188a8e87b2b1f, type: 3}
       propertyPath: _enemys.Array.data[4]
       value: 
@@ -4301,7 +4301,7 @@ PrefabInstance:
     - target: {fileID: 8630666092342251459, guid: 91cf714ec1ac06046b8188a8e87b2b1f, type: 3}
       propertyPath: _targets.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5279022026119866868, guid: 00001126562c5584cba9e531ac121238, type: 3}
     - target: {fileID: 8630666092342251459, guid: 91cf714ec1ac06046b8188a8e87b2b1f, type: 3}
       propertyPath: _targets.Array.data[2]
       value: 
