@@ -7,11 +7,12 @@ public class Zombie : Enemy
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        Mover = GetComponent<EnemyMover>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (Target.gameObject)
+        if (Mover.Target.gameObject)
         {
             _animator.SetBool("_isItTarget", true);
         }

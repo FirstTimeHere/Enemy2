@@ -6,14 +6,14 @@ public class Rabbit : Enemy
 
     private bool _isTouchTarget;
 
-    protected override void GetVisionTarget(Vector3 targetPosition)
+    private void Awake()
     {
-        base.GetVisionTarget(targetPosition);
+        Mover = GetComponent<EnemyMover>();
     }
 
     private void Update()
     {
-        GetVisionTarget(GetTargetPosition());
+        GetVisionTarget(Mover.Target.transform.position);
 
         if (_isTouchTarget)
         {
@@ -23,7 +23,7 @@ public class Rabbit : Enemy
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.position == GetTargetPosition())
+        if (other.transform.position == Mover.Target.transform.position)
         {
             _isTouchTarget = true;
         }

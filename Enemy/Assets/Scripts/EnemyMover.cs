@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
+    public Target Target { get; private set; }
+
     private int _speed;
     private int _maxSpeed = 5;
 
@@ -17,6 +19,12 @@ public class EnemyMover : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _enemy.GetTargetPosition(), _speed * Time.deltaTime);
+        _enemy.GetVisionTarget(Target.transform.position);
+        transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, _speed * Time.deltaTime);
+    }
+
+    public void GetTargetFromSpawner(Target target)
+    {
+        Target = target;
     }
 }

@@ -2,25 +2,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    protected Target Target;
+    protected EnemyMover Mover;
 
-    private void Update()
+    private void Awake()
     {
-        GetVisionTarget(Target.transform.position);
+        Mover = GetComponent<EnemyMover>();
     }
 
     public void GetTarget(Target target)
     {
-        Target = target;
+        Mover.GetTargetFromSpawner(target);
     }
 
-    protected virtual void GetVisionTarget(Vector3 targetPosition)
+    public void GetVisionTarget(Vector3 targetPosition)
     {
-        this.transform.LookAt(targetPosition);
-    }
-
-    public virtual Vector3 GetTargetPosition()
-    {
-        return Target.transform.position;
+        transform.LookAt(targetPosition);
     }
 }

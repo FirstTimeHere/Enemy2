@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private Transform[] _spawnTargetPoints;
+    [SerializeField] private Transform[] _points;
     [SerializeField] private List<Enemy> _enemys = new List<Enemy>();
     [SerializeField] private List<Target> _targets = new List<Target>();
 
@@ -16,11 +17,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < _targets.Count; i++)
-        {
-            int randomIndexSpawnPoint = Random.Range(0, _spawnTargetPoints.Length);
-            _targetCreated.Add(Instantiate(_targets[i], _spawnTargetPoints[randomIndexSpawnPoint].position, _spawnTargetPoints[randomIndexSpawnPoint].rotation));
-        }
+        SpawnTarget();
     }
 
     private void Start()
@@ -37,6 +34,19 @@ public class EnemySpawner : MonoBehaviour
         Enemy enemy = Instantiate(_enemys[randomEnemy], _spawnPoints[randomTransform].position, _spawnPoints[randomTransform].rotation);
 
         enemy.GetTarget(_targetCreated[randomTarget]);
+    }
+
+    private void SpawnTarget()
+    {
+        for (int i = 0; i < _targets.Count; i++)
+        {
+            int randomIndexSpawnPoint = Random.Range(0, _spawnTargetPoints.Length);
+            int randomIndexMovePoint = Random.Range(0, _points.Length);
+
+            _targetCreated.Add(Instantiate(_targets[i], _spawnTargetPoints[randomIndexSpawnPoint].position, _spawnTargetPoints[randomIndexSpawnPoint].rotation));
+
+            _targetCreated[i].GetPoint(_points[randomIndexMovePoint]);
+        }
     }
 
     private IEnumerator GetSpawnEnemy(float delay)
